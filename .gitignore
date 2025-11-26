@@ -43,3 +43,43 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+
+@"
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+*.iml
+*.lock
+build/
+.gradle/
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Dependencies
+pubspec.lock
+
+# Generated files
+.g.dart
+.config.json
+
+# IDE
+.classpath
+.project
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Web
+web/packages
+
+# Misc
+*.log
+"@ | Out-File -FilePath .gitignore -Encoding UTF8
