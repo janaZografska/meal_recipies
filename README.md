@@ -21,7 +21,7 @@ A Flutter application that displays meal recipes from around the world using the
 
 1. Clone the repository
 \`\`\`bash
-git clone https://github.com/YOUR_USERNAME/meal_recipies.git
+git clone https://github.com/janaZografska/meal_recipies.git
 cd meal_recipies
 \`\`\`
 
