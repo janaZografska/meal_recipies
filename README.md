@@ -1,4 +1,4 @@
-@"
+
 # Meal Recipes App
 
 A Flutter application that displays meal recipes from around the world using the TheMealDB API.
@@ -47,3 +47,15 @@ This app uses the free [TheMealDB API](https://www.themealdb.com/api.php)
 ## Author
 
 Jana Zografska (213173)
+
+### Screenshots 
+
+## Main Screen 
+<img width="551" height="857" alt="Categories" src="https://github.com/user-attachments/assets/b71b6e57-88e7-4196-9d6a-0debb167e54e" />
+
+## Specific Category Screen (Beef)
+<img width="550" height="845" alt="Category Beef" src="https://github.com/user-attachments/assets/a9b83ab6-f220-4ae8-bfb9-11119b008ee0" />
+
+## Details of a recipe
+<img width="569" height="869" alt="random(details)" src="https://github.com/user-attachments/assets/32eaafe9-b770-4e42-8379-a3e21bbe4248" />
+
