@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import '../models/meal_details.dart';
 import '../services/api_service.dart';
+import '../services/favorites_manager.dart';
 
 class MealDetailScreen extends StatefulWidget {
   static const String routeName = '/meal_detail';
   final MealDetail? meal;
 
-  const MealDetailScreen({this.meal});
+  const MealDetailScreen({super.key, this.meal});
 
   @override
   _MealDetailScreenState createState() => _MealDetailScreenState();
@@ -45,12 +46,27 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isFavorite = meal != null && favoritesManager.isFavorite(meal!.id);
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text(meal?.name ?? 'Meal Detail', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white)),
         iconTheme: IconThemeData(color: Colors.white),
+        actions: [
+          if (meal != null)
+            IconButton(
+              icon: Icon(
+                isFavorite ? Icons.favorite : Icons.favorite_border,
+                color: Colors.red,
+              ),
+              onPressed: () {
+                favoritesManager.toggleFavorite(meal!.id);
+                setState(() {});
+              },
+            ),
+        ],
       ),
       body: loading
           ? Center(child: CircularProgressIndicator(color: Colors.black, strokeWidth: 4))
@@ -90,7 +106,7 @@ class _MealDetailScreenState extends State<MealDetailScreen> {
                             SizedBox(height: 8),
                             ...meal!.ingredients
                                 .map((ing) => Text('• ${ing['ingredient']} - ${ing['measure']}'))
-                                .toList(),
+                                ,
                             if (meal!.youtube.isNotEmpty) ...[
                               SizedBox(height: 16),
                               ElevatedButton(

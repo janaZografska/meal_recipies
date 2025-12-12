@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/categories_screen.dart.dart';
 import 'screens/meals_by_category_screen.dart';
 import 'screens/meal_details_screen.dart';
+import 'screens/favorites_screen.dart';
 
 
 void main() => runApp(MealApp());
@@ -26,6 +27,7 @@ home: CategoriesScreen(),
 routes: {
 MealsByCategoryScreen.routeName: (_) => MealsByCategoryScreen(),
 MealDetailScreen.routeName: (_) => MealDetailScreen(),
+FavoritesScreen.routeName: (_) => FavoritesScreen(),
 },
 );
 }

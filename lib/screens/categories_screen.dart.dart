@@ -3,9 +3,12 @@ import '../models/category.dart';
 import '../services/api_service.dart';
 import 'meals_by_category_screen.dart';
 import 'meal_details_screen.dart';
+import 'favorites_screen.dart';
 import '../widgets/category_card.dart';
 
 class CategoriesScreen extends StatefulWidget {
+  const CategoriesScreen({super.key});
+
 @override
 _CategoriesScreenState createState() => _CategoriesScreenState();
 }
@@ -114,6 +117,25 @@ shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
 onPressed: _loadRandomMeal,
 child: Text(
 'Randomized Recipe',
+style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+),
+),
+),
+),
+// Favorite Recipes button
+Padding(
+padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+child: SizedBox(
+width: double.infinity,
+child: ElevatedButton(
+style: ElevatedButton.styleFrom(
+backgroundColor: Colors.red[600],
+padding: EdgeInsets.symmetric(vertical: 12),
+shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+),
+onPressed: () => Navigator.pushNamed(context, FavoritesScreen.routeName),
+child: Text(
+'Favorite Recipes',
 style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
 ),
 ),
