@@ -20,12 +20,12 @@ A Flutter application that displays meal recipes from around the world using the
 ### Installation
 
 1. Clone the repository
-\`\`\`bash
+\`\`\`
 git clone https://github.com/janaZografska/meal_recipies.git
 \`\`\`
 
 2. Install dependencies
-\`\`\`bash
+\`\`\`
 cd meal_recipies
 flutter pub get
 \`\`\`
